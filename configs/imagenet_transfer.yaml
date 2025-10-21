@@ -1,0 +1,82 @@
+defaults:
+  - _self_
+  - user: user
+  - dataset: counteranimal # (e.g., counteranimal, imagenet9)
+
+model_path: null
+
+LC_batch_size: 128
+adv_train: false
+approx_n: 1024
+attack:
+    attack_box: false
+    attack_protected: false
+    attack_right: false
+    attack_type: pgd
+    epsilon: 0.003921568
+    pgd_alpha: 0.00196078
+    pgd_steps: 10
+batch_size: 256
+compute_LC: false
+device: cuda
+epochs: 10
+explicit_model_path: null
+group_name: null
+inc_centroid: false
+k_type_y: linear
+last_hidden_dim: 1024
+learning_rate: 0.0005
+log_interval: 5
+lr_scheduler: null
+model: resnet50
+model_dir: null
+n_frame: 40
+num_workers: 10
+pretrained_model_path: null
+r_frame: 0.005
+resnet:
+    norm_layer: null
+    weights: imagenet
+run_hash: null
+run_name: null
+seed: 0
+sigma: 5.0
+sparsity_lambda: 0
+sparsity_type: null
+split_hps:
+    additional_hsic_y_x: true
+    additional_hsic_z_z: true
+    beta_init_sample_fraction: 0.5
+    beta_step: 0.99
+    beta_update_step_fraction: 0.01
+    cross_entropy_weight: 10
+    hard_space_split: true
+    hsic_warmup_epochs: on_hard_space_split
+    l_cluster_hsicx_weight: 0.1
+    l_hsic_z_z_weight: 0
+    l_shared_hsicy_weight: 0.1
+    lambda_cluster: 0.1
+    lambda_shared: 0.1
+    lambda_x: 0
+    lambda_x_shared: 0
+    lambda_y: 0
+    lambda_y_cluster: 0.1
+    shared_space_variation: 0.1
+    update_betas_per_epoch: true
+training_type: split_train
+val_split_ratio: 0.2
+verbose: 0
+warmup: false
+warmup_epochs: 0
+warmup_lr: 1.0e-17
+weight_decay: 0
+
+hbar_hps:
+  xentropy_weight: 1.0    
+  smooth: 0              
+  smooth_eps: 0         
+  lambda_x: 0.005       
+  lambda_y: 0.05        
+  sigma: 5              
+  k_type_y: linear
+  hsic_layer_decay: 0 

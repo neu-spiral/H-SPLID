@@ -1,0 +1,3 @@
+# @package _global_
+training_type: standard
+weight_decay: 0.001

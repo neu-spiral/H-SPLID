@@ -1,0 +1,7 @@
+enabled: false
+# only used if enabled=true:
+monitor: "val/ACC"
+mode: "max"
+ckpt_dir: './assets/checkpoints' # must be set to a valid path if enabled=true
+# optional resume path
+resume_from_checkpoint: null

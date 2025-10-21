@@ -1,0 +1,17 @@
+# @package _global_
+training_type: standard
+
+sparsity_lambda: 1.0e-06
+sparsity_type: L1-activation
+learning_rate: 5.0e-05
+
+model: resnet50
+resnet:
+  norm_layer: null # "none"
+  weights: "imagenet"
+
+use_class_weights: true
+class_weight_method: "balanced"
+
+wandb:
+  tag: "isic2017-lsa"

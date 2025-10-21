@@ -1,0 +1,36 @@
+# @package _global_
+
+file_name: "corruption_attacks"
+
+# logging parameter
+wandb:
+  tag: corruption_attacks
+
+# running attacks parameters
+attacks_denominator: 255 # divide epsilons by 255 (not used for corruptions but kept for compatibility)
+partial_attack_epsilons: []
+block_attack_epsilons: []
+full_attack_epsilons: []
+
+# Corruption-specific parameters (severity levels instead of epsilons)
+corruption_severities: [1, 3, 5]  # Severity levels for corruptions (1-5)
+
+# Attack only the protected region for corruptions
+corruption_attack_full_image: false
+
+Attacks: 
+  - attack:
+      attack_type: corruption
+      corruption_type: defocus_blur
+      severity: 1 # Will be overridden by the severity levels in the config
+      desc: defocus-blur
+  - attack:
+      attack_type: corruption
+      corruption_type: brightness
+      severity: 1 # Will be overridden by the severity levels in the config
+      desc: brightness
+  - attack:
+      attack_type: corruption
+      corruption_type: snow
+      severity: 1 # Will be overridden by the severity levels in the config
+      desc: snow

@@ -1,0 +1,20 @@
+name: 'imagenet9'
+data_dir: './assets/datasets/bg_challenge'
+
+subset_path: 'original' # 'original', 'mixed_rand', 'only_fg'
+
+sample_fraction_per_class: null # null or 1.0 means all samples, 0.1 means 10% of samples
+evaluate_mode: null
+augmentation_type: 'imagenet'
+
+resize: 224
+channels: 3
+n_classes: 1000
+channel_means: # assumes shape 224x224
+  - 0.485
+  - 0.456
+  - 0.406
+channel_stds: # assumes shape 224x224
+  - 0.229
+  - 0.224
+  - 0.225

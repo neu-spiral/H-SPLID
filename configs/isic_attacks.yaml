@@ -1,0 +1,89 @@
+# @package _global_
+
+defaults:
+  - _self_
+  - attacks: corruption_attacks
+  - dataset: isic2017
+
+result_file_path: './assets/robustness_evaluation'
+batch_size: 128
+device: cuda
+seed: null
+
+run_name: null
+run_hash: null
+
+seeds: [1]
+
+num_workers: 5
+val_split_ratio: 0.2 # percentage of validation data sampled from training data
+
+file_name: null
+results_path: './assets/robustness_evaluation'
+
+# logging parameter
+wandb:
+  enabled: true
+  project: null
+  entity: null
+  tag: null 
+  save_dir: './assets/logs'
+
+hydra:
+  output_subdir: null
+  run:
+    dir: './assets/logs'
+
+# running attacks parameters
+epsilons: null # will be overwritten by the attacks
+general_attack_type: null
+
+attack_domain:
+  attack_right: false
+  attack_protected: true
+  attack_box: [false]
+  box_H_mp: 0.25098039215686274 # = 64/224
+  box_W_mp: 0.25098039215686274 # = 64/224
+
+Models:
+  - model: 
+      model_paths: 
+        - '' # seed 1
+        - '' # seed 2
+      model_desc: "H-SPLID"
+      no_betas: false
+  - model: 
+      model_paths: 
+        - '' # seed 1
+        - '' # seed 2
+      model_desc: "Vanilla"
+  - model: 
+      model_paths:
+        - '' # seed 1
+        - '' # seed 2
+      model_desc: "Weight Decay"
+  - model: 
+      model_paths: 
+        - '' # seed 1
+        - '' # seed 2
+      model_desc: "L1 Sparse Weights"
+  - model: 
+      model_paths:
+        - '' # seed 1
+        - '' # seed 2
+      model_desc: "Group Lasso Activations"
+  - model: 
+      model_paths:
+        - '' # seed 1
+        - '' # seed 2
+      model_desc: "L1 Sparse Activations"
+  - model: 
+      model_paths:
+        - '' # seed 1
+        - '' # seed 2
+      model_desc: "Group Lasso Weights"
+  - model:
+      model_paths:
+        - '' # seed 1
+        - '' # seed 2
+      model_desc: "HBaR"

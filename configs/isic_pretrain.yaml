@@ -1,0 +1,90 @@
+# @package _global_
+
+defaults:
+  - _self_
+  - user: user
+  - dataset: isic2017
+  - checkpoint: checkpoint
+  - experiment: isic2017/resnet50/vanilla_isic2017
+
+device: cuda
+accelerator: auto
+devices: 1
+training_type: null
+pretrained_model_path: null
+
+batch_size: 32
+learning_rate: 0.0005
+weight_decay: 0
+epochs: 50
+
+seed: 1
+
+split_hps:
+  additional_hsic_y_x: null
+  additional_hsic_z_z: null
+  beta_init_sample_fraction: null
+  beta_step: null
+  beta_update_step_fraction: null
+  cross_entropy_weight: null
+  hard_space_split: null
+  hsic_warmup_epochs: null
+  l_cluster_hsicx_weight: null
+  l_hsic_z_z_weight: null
+  l_shared_hsicy_weight: null
+  lambda_cluster: null
+  lambda_shared: null
+  lambda_x: null
+  lambda_x_shared: null
+  lambda_y: null
+  lambda_y_cluster: null
+  shared_space_variation: null
+  update_betas_per_epoch: null
+  beta_warmup_epochs: null
+
+hbar_hps:
+  xentropy_weight: null
+  smooth: null
+  smooth_eps: null
+  lambda_x: null
+  lambda_y: null
+  sigma: null
+  k_type_y: null
+  hsic_layer_decay: null
+
+model: resnet18
+resnet:
+  norm_layer: "none"
+  weights: null
+
+val_split_ratio: 0.2 # percentage of validation data sampled from training data
+num_workers: 10
+
+explicit_model_path: null
+
+run_name: null
+run_hash: null
+group_name: null
+
+sigma: 5.
+
+attack:
+  attack_type: pgd
+  epsilon: 0.0078431  # = 2/255
+  pgd_steps: 10 # 20
+  pgd_alpha: 0.003921568 # = 2/255/2 
+  attack_right: false
+  attack_protected: true
+  attack_box: false
+
+compute_LC: false
+
+k_type_y: linear
+last_hidden_dim: 1024
+lr_scheduler :  null
+warmup_lr: 0.00000000000000001
+warmup_epochs: 0
+warmup: false
+
+sparsity_type: null
+sparsity_lambda: 0

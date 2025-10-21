@@ -1,0 +1,18 @@
+# @package _global_
+training_type: standard
+
+sparsity_lambda: 0.01
+sparsity_type: group_lasso-weights
+
+learning_rate: 0.00005
+
+model: resnet50
+resnet:
+  norm_layer: null # "none"
+  weights: "imagenet"
+
+use_class_weights: true
+class_weight_method: "balanced"
+
+wandb:
+  tag: "isic2017-glw"

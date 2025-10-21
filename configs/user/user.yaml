@@ -1,0 +1,21 @@
+# @package _global_
+
+defaults:
+  - _self_
+
+# logging parameter
+log_interval: 1
+verbose: 0
+model_dir: null
+wandb:
+  enabled: true
+  project: null
+  tag: null
+
+  entity: null
+  save_dir: './assets/logs'
+
+hydra:
+  output_subdir: null
+  run:
+    dir: './assets/logs'

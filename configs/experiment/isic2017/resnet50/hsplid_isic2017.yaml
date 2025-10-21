@@ -1,0 +1,37 @@
+# @package _global_
+training_type: split_train
+
+split_hps:
+  additional_hsic_y_x: true
+  additional_hsic_z_z: true
+  beta_init_sample_fraction: 1.0
+  beta_step: 0.8
+  beta_update_step_fraction: 1.0
+  beta_warmup_epochs: 0
+  cross_entropy_weight: 10
+  hard_space_split: true
+  hsic_warmup_epochs: on_hard_space_split
+  l_cluster_hsicx_weight: 0.05
+  l_hsic_z_z_weight: 0
+  l_shared_hsicy_weight: 0.1
+  lambda_cluster: 0.2
+  lambda_shared: 0.1
+  lambda_x: 0
+  lambda_x_shared: 0
+  lambda_y: 0
+  lambda_y_cluster: 0
+  shared_space_variation: 0.025
+  update_betas_per_epoch: true
+
+learning_rate: 0.00005
+
+model: resnet50
+resnet:
+  norm_layer: null # "none"
+  weights: "imagenet"
+
+use_class_weights: true
+class_weight_method: "balanced"
+
+wandb:
+  tag: "isic2017-hsplid"

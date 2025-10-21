@@ -1,0 +1,4 @@
+# @package _global_
+training_type: standard
+sparsity_type: 'L1-weights'
+sparsity_lambda: 1.0e-05 # 0.00001

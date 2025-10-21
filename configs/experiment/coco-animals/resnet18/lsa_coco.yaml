@@ -1,0 +1,4 @@
+# @package _global_
+training_type: standard
+sparsity_type: 'L1-activation'
+sparsity_lambda: 0.000001

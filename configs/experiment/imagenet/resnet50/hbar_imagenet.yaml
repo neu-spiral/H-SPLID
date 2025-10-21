@@ -1,0 +1,11 @@
+# @package _global_
+training_type: hbar
+hbar_hps:
+  xentropy_weight: 1.0
+  smooth: 0
+  smooth_eps: 0
+  lambda_x: 0.005
+  lambda_y: 0.05
+  sigma: 5.0
+  k_type_y: linear
+  hsic_layer_decay: 0

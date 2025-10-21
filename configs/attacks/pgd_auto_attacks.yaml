@@ -1,0 +1,28 @@
+# @package _global_
+
+file_name: "pgd_auto_attacks"
+
+# logging parameter
+wandb:
+  tag: pgd_auto_attacks
+
+# running attacks parameters
+attacks_denominator: 255 # divide epsilons by 255
+partial_attack_epsilons: [1, 2, 3]
+block_attack_epsilons: [25, 128, 255]
+full_attack_epsilons: [1, 2]
+
+Attacks: 
+  - attack:
+      attack_type: pgd
+      pgd_steps: 10 # 20
+      pgd_alpha: 0.0156 # 0.01
+      random_start: true
+      desc: pgd-fixed-alpha-10-steps
+  - attack:
+      attack_type: autoattack
+      version: rand # autoattack, Valid values: standard, plus, rand
+      norm: Linf # Valid values: Linf,L2 (autoattack)
+      seed: null # autoattack (Default: None) If null, then seed from seeds will be used
+      n_classes: null # will be inferred from dataset
+      desc: autoattack-standard-linf

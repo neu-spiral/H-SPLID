@@ -1,0 +1,4 @@
+# @package _global_
+training_type: standard
+sparsity_type: 'group_lasso-activation'
+sparsity_lambda: 0.00001

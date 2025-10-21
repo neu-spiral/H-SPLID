@@ -1,0 +1,9 @@
+name: 'cmnist'
+data_dir: './assets/datasets'
+resize: 64
+channels: 1
+n_classes: 10
+channel_means: # assumes shape 64x64
+  - 0.0500
+channel_stds: # assumes shape 64x64
+  - 0.2009

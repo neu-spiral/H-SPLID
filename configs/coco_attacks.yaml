@@ -1,0 +1,69 @@
+# @package _global_
+
+defaults:
+  - _self_
+  - attacks: pgd_auto_attacks
+  - dataset: coco-animals
+
+result_file_path: './assets/robustness_evaluation'
+batch_size: 256
+device: cuda
+seed: null
+
+run_name: null
+run_hash: null
+
+seeds: [1,2,3,4,5]
+
+num_workers: 5
+val_split_ratio: 0.2 # percentage of validation data sampled from training data
+
+file_name: null
+results_path: './assets/robustness_evaluation'
+
+# logging parameter
+wandb:
+  enabled: true
+  project: "Project Name"
+  entity: wandb-entity
+  tag: "coco_attacks"
+  save_dir: './assets/logs'
+
+
+# running attacks parameters
+epsilons: null # will be overwritten by the attacks
+general_attack_type: null
+
+attack_domain:
+  attack_right: false
+  attack_protected: true
+  attack_box: [false]
+  box_H_mp: 0.25098039215686274 # = 64/224
+  box_W_mp: 0.25098039215686274 # = 64/224
+
+Models:
+  - model: 
+      model_path: ''
+      model_desc: "H-SPLID"
+      no_betas: false
+  - model: 
+      model_path: ''
+      model_desc: "Vanilla"
+  - model: 
+      model_path: ''
+      model_desc: "Weight Decay"
+  - model: 
+      model_path: ''
+      model_desc: "L1 Sparse Weights"
+  - model: 
+      model_path: ''
+      model_desc: "Group Lasso Activations"
+  - model: 
+      model_path: ''
+      model_desc: "L1 Sparse Activations"
+  - model: 
+      model_path: ''
+      model_desc: "Group Lasso Weights"
+  - model:
+      model_path: ''
+      model_desc: "HBaR"

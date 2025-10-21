@@ -1,0 +1,13 @@
+name: 'isic2017'
+data_dir: './assets/datasets'
+resize: 224
+channels: 3
+n_classes: 3
+channel_means:
+  - 0.7232
+  - 0.6168
+  - 0.5692
+channel_stds:
+  - 0.1668
+  - 0.1750
+  - 0.1955

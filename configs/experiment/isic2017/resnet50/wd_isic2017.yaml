@@ -1,0 +1,16 @@
+# @package _global_
+training_type: standard
+
+weight_decay: 0.0001
+learning_rate: 5.0e-05
+
+model: resnet50
+resnet:
+  norm_layer: null # "none"
+  weights: "imagenet"
+
+use_class_weights: true
+class_weight_method: "balanced"
+
+wandb:
+  tag: "isic2017-wd"

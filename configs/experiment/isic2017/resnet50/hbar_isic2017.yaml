@@ -1,0 +1,25 @@
+# @package _global_
+training_type: hbar
+
+hbar_hps:
+    hsic_layer_decay: 0
+    k_type_y: linear
+    lambda_x: 0.001
+    lambda_y: 0.1
+    sigma: 5.0
+    smooth: 0
+    smooth_eps: 0
+    xentropy_weight: 1.0
+
+learning_rate: 5.0e-05
+
+model: resnet50
+resnet:
+  norm_layer: null # "none"
+  weights: "imagenet"
+
+use_class_weights: true
+class_weight_method: "balanced"
+
+wandb:
+  tag: "isic2017-hbar"
