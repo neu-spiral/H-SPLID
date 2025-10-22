@@ -1,4 +1,4 @@
-name: split_train
+name: hsplid
 channels:
   - pytorch
   - nvidia

@@ -1,45 +1,24 @@
 # H-SPLID: HSIC-based Saliency Preserving Latent Information Decomposition
+This repository contains the implementation for the paper "H-SPLID: HSIC-based Saliency Preserving Latent Information Decomposition" (NeurIPS 2025).
 <p align="center">
     <a href="assets/figures/figure1.png">
         <img src="assets/figures/figure1.png" alt="Results" width="70%"/>
     </a>
 </p>
-This is the codebase accompanying our paper "H-SPLID: HSIC-based Saliency Preserving Latent Information Decomposition". H-SPLID learns to ignore irrelevant input by decomposing the latent space into salient and non-salient components. <b>Left</b>: A simple diagnostic test for saliency, where the model is trained to classify the left digit (only labels for the left are provided) and it should ignore the right. <b>Middle</b>: A model trained with cross-entropy loss achieves high test accuracy (96.86%) but produces entangled representations, making it sensitive to perturbations on the right digit (accuracy drops to 31.76% under high-magnitude PGD attack). <b>Right</b>: H-SPLID separates the latent space into a salient subspace, which captures class-discriminative structure (ACC 97.14%), and a non-salient subspace, which contains no class-relevant information (ACC 8.57%). This separation enables robustness to perturbations on irrelevant input (ACC 87.46%), showing proper learning of salient features.
-
-
-<p align="center">
-    <a href="assets/figures/figure2.png">
-        <img src="assets/figures/figure2.png" alt="Results" width="70%"/>
-    </a>
-</p>
+H-SPLID learns to ignore irrelevant input by decomposing the latent space into salient and non-salient components. <b>Left</b>: A simple diagnostic test for saliency, where the model is trained to classify the left digit (only labels for the left are provided) and it should ignore the right. <b>Middle</b>: A model trained with cross-entropy loss achieves high test accuracy (96.86%) but produces entangled representations, making it sensitive to perturbations on the right digit (accuracy drops to 31.76% under high-magnitude PGD attack). <b>Right</b>: H-SPLID separates the latent space into a salient subspace, which captures class-discriminative structure (ACC 97.14%), and a non-salient subspace, which contains no class-relevant information (ACC 8.57%). This separation enables robustness to perturbations on irrelevant input (ACC 87.46%), showing proper learning of salient features.
 
 ## Installation
 
 You can install the project dependencies using either Conda or pip:
-
-### Option 1: Using pip
-
-1. Navigate to the repository:
-```cd hsplid```
-
-2. Create and activate a virtual environment:
 ```bash
+git clone https://github.com/neu-spiral/H-SPLID.git
+cd h-splid
+
+# Pip:
 python -m venv venv
 source venv/bin/activate
-```
-
-3. Install dependencies:
-```bash
 pip install -r requirements.txt
-```
-
-### Option 2: Using Conda 
-
-1. Navigate to the repository:
-```cd hsplid```
-
-2. Create and activate the conda environment:
-```bash
+# Conda:
 conda env create -f environment.yml
 conda activate hsplid
 ```
@@ -163,3 +142,16 @@ Configuration is managed through Hydra, with config files located in the `config
    ```bash
    python attacks.py --config-name=isic_attacks
    ```
+
+## Citation
+
+If you use this code in your research, please cite:
+
+```bibtex
+@article{miklautz2025hsplid,
+  title={H-SPLID: HSIC-based Saliency Preserving Latent Information Decomposition},
+  author={TODO},
+  journal={TODO},
+  year={2025}
+}
+```

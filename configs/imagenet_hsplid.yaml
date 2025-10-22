@@ -1,5 +1,4 @@
 # @package _global_
-# Logging setup per user
 
 defaults:
   - _self_
@@ -7,12 +6,11 @@ defaults:
   - dataset: imagenet
   - checkpoint: checkpoint
   - experiment: imagenet/resnet50/hsplid_imagenet
-  
-device: cuda
-accelerator: auto
-devices: 1
-training_type: null # will be overridden by experiment config
 
+device: cuda
+devices: 1
+accelerator: auto
+training_type: null
 pretrained_model_path: null
 
 batch_size: 256
@@ -44,22 +42,14 @@ split_hps:
   update_betas_per_epoch: null
   beta_warmup_epochs: null
 
-hbar_hps:
-  xentropy_weight: null
-  smooth: null
-  smooth_eps: null
-  lambda_x: null
-  lambda_y: null
-  sigma: null
-  k_type_y: null
-  hsic_layer_decay: null
-
-model: resnet18
+model: resnet50
 resnet:
-  norm_layer: "none"
-  weights: null
+  norm_layer: null
+  weights: 'imagenet'
 
 val_split_ratio: 0.2 # percentage of validation data sampled from training data
+
+adv_train: False # specify if adversarial training should be used
 num_workers: 10
 
 explicit_model_path: null
@@ -72,9 +62,9 @@ sigma: 5.
 
 attack:
   attack_type: pgd
-  epsilon: 0.0078431  # = 2/255
+  epsilon: 0.003921568  # = 1/255
   pgd_steps: 10 # 20
-  pgd_alpha: 0.003921568 # = 2/255/2
+  pgd_alpha: 0.00196078 # 0.003921568 # = 2/255/2
   attack_right: false
   attack_protected: false
   attack_box: false
@@ -90,3 +80,13 @@ warmup: false
 
 sparsity_type: null
 sparsity_lambda: 0
+
+hbar_hps:
+  xentropy_weight: null
+  smooth: null
+  smooth_eps: null
+  lambda_x: null
+  lambda_y: null
+  sigma: null
+  k_type_y: null
+  hsic_layer_decay: null

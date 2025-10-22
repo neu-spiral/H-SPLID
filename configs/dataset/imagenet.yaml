@@ -1,7 +1,7 @@
 name: 'imagenet'
 data_dir: './assets/datasets'
 subset_path: null
-sample_fraction_per_class: 0.3
+sample_fraction_per_class: 1.0
 
 resize: 224
 channels: 3
