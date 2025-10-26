@@ -148,10 +148,13 @@ Configuration is managed through Hydra, with config files located in the `config
 If you use this code in your research, please cite:
 
 ```bibtex
-@article{miklautz2025hsplid,
-  title={H-SPLID: HSIC-based Saliency Preserving Latent Information Decomposition},
-  author={TODO},
-  journal={TODO},
-  year={2025}
+@misc{miklautz2025hsplidhsicbasedsaliencypreserving,
+      title={H-SPLID: HSIC-based Saliency Preserving Latent Information Decomposition}, 
+      author={Lukas Miklautz and Chengzhi Shi and Andrii Shkabrii and Theodoros Thirimachos Davarakis and Prudence Lam and Claudia Plant and Jennifer Dy and Stratis Ioannidis},
+      year={2025},
+      eprint={2510.20627},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2510.20627}, 
 }
 ```
