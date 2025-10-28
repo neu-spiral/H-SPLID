@@ -145,7 +145,7 @@ Configuration is managed through Hydra, with config files located in the `config
 
 ## Citation
 
-If you use this code in your research, please cite:
+If you use this code in your research, please cite (NeuRIPS citation coming soon):
 
 ```bibtex
 @misc{miklautz2025hsplidhsicbasedsaliencypreserving,
